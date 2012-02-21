@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function worxco_footer_block_info() {
+  $blocks['worxco_footer'] = array(
+    'info' => t('Worxco Footer'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function worxco_footer_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'worxco_footer':
+      $block['subject'] = t('<none>');
+      $block['content'] = "<p>&copy;<?php print date('Y'); ?> <strong><?php print variable_get('site_name', 'Drupal'); ?></strong>. - All Rights Reserved<br><?php global $user; if ($user->uid == 0) { ?><a href='/user'>Site Admin Login</a><?php } else { ?><a href='/user/logout'>Logout</a><?php } ?> | Developed by <a href='http://www.worxco.com/' target='_blank'>the Worx Company</a> | Hosted by <a href='http://www.hostsofamerica.com/' target='_blank'>Hosts of America</a></p>";
+      break;
+  }
+
+  return $block;
+}
