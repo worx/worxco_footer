@@ -27,7 +27,9 @@ function worxco_footer_block_view($delta = '') {
       } else {
         $output .= '<a href="/user/logout">Logout</a>';
       }
-      $output .= ' | Developed by <a href="http://worxco.com/" target="_blank">the Worx Company</a> | Hosted by <a href="http://www.hostsofamerica.com/" target="_blank">Hosts of America</a></p>';
+      if (drupal_is_front_page()) {
+        $output .= ' | Developed by <a rel="nofollow" href="http://worxco.com/" target="_blank">the Worx Company</a> | Hosted by <a href="http://www.hostsofamerica.com/" target="_blank">Hosts of America</a></p>';
+      }
       $block['content'] = $output;
       break;
     }
