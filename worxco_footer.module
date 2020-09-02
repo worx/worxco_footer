@@ -28,7 +28,7 @@ function worxco_footer_block_view($delta = '') {
         } else {
           $output .= '<a href="/user/logout">Logout</a>';
         }
-        $output .= ' | Developed by <a rel="nofollow" href="http://worxco.com/" target="_blank">the Worx Company</a></p>';
+        $output .= ' | Developed by <a rel="nofollow" href="https://worxco.com/" target="_blank">the Worx Company</a></p>';
       }
       $block['content'] = $output;
       break;
